@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 # 📧 Email Spam Classification
 
 A machine learning project that classifies emails and SMS messages as **spam** or **ham (not spam)** using Natural Language Processing techniques.
 
-**Achieved ~98% accuracy** using TF-IDF vectorization with Logistic Regression, tuned via GridSearchCV.
+🚀 Achieved **~98% accuracy** using TF-IDF vectorization with Logistic Regression, tuned via GridSearchCV.
 
 ---
 
@@ -23,25 +22,25 @@ A machine learning project that classifies emails and SMS messages as **spam** o
 
 ## 📁 Project Structure
 
-```
+
 email-spam-classifier/
 │
 ├── data/
-│   ├── spam.csv              # Dataset (ham/spam messages)
-│   └── generate_data.py      # Dataset generation script
+│ ├── spam.csv
+│ └── generate_data.py
 │
 ├── models/
-│   ├── spam_classifier.pkl   # Saved trained model
-│   └── evaluation.png        # Confusion matrix + ROC curve plots
+│ ├── spam_classifier.pkl
+│ └── evaluation.png
 │
 ├── notebooks/
-│   └── spam_classification.ipynb  # Full EDA + training walkthrough
+│ └── spam_classification.ipynb
 │
-├── train.py                  # End-to-end training pipeline
-├── predict.py                # Inference script
+├── train.py
+├── predict.py
 ├── requirements.txt
 └── README.md
-```
+
 
 ---
 
@@ -51,106 +50,65 @@ email-spam-classifier/
 ```bash
 git clone https://github.com/mohitmasavarapu19/email-spam-classifier.git
 cd email-spam-classifier
-```
-
-### 2. Install dependencies
-```bash
+2. Install dependencies
 pip install -r requirements.txt
-```
-
-### 3. Train the model
-```bash
+3. Generate dataset
+python data/generate_data.py
+4. Train the model
 python train.py
-```
-
-### 4. Run predictions
-```bash
-# Demo predictions
+5. Run predictions
 python predict.py
-
-# Classify a specific message
-python predict.py --message "WINNER! You've been selected for a £900 prize!"
-```
-
-### 5. Explore the notebook
-```bash
-jupyter notebook notebooks/spam_classification.ipynb
-```
-
----
-
-## 🧠 ML Pipeline
-
-```
+6. Test custom message
+python predict.py --message "WINNER! You got a prize!"
+🧠 ML Pipeline
 Raw Text
    ↓
-Data Cleaning  (strip whitespace, remove nulls)
+Data Cleaning
    ↓
-TF-IDF Vectorization  (max 5000 features, bigrams, sublinear TF)
+TF-IDF Vectorization
    ↓
-Model Training  (Naive Bayes + Logistic Regression)
+Model Training (NB + Logistic Regression)
    ↓
-Hyperparameter Tuning  (GridSearchCV, 5-Fold CV)
+Hyperparameter Tuning (GridSearchCV)
    ↓
-Evaluation  (Accuracy, Precision, Recall, F1, ROC-AUC)
+Evaluation (Accuracy, ROC-AUC)
    ↓
 Saved Model (.pkl)
-```
+📊 Results
+Accuracy: ~98%
+Best Model: Logistic Regression
+5-Fold CV: 98.57% ± 1.03%
+📈 Evaluation
 
----
+Model evaluation includes:
 
-## 📊 Results
+Confusion Matrix
+ROC Curve
+Accuracy comparison
 
-| Model | Accuracy |
-|-------|----------|
-| Naive Bayes | 98.85% |
-| Logistic Regression | 98.85% |
-| **Tuned LR (GridSearchCV)** | **~98%** |
+Saved at:
 
-**Best hyperparameters:**
-- `tfidf__max_features`: 3000
-- `tfidf__ngram_range`: (1, 1)
-- `clf__C`: 5.0
+models/evaluation.png
+🚀 Demo
 
-**5-Fold Cross-Validation:** 98.57% ± 1.03%
+Example:
 
----
+Input:
 
-## 🔍 How TF-IDF Works
+WINNER! You have been selected for a prize!
 
-**TF-IDF (Term Frequency–Inverse Document Frequency)** converts text into numerical feature vectors:
+Output:
 
-- **TF** — How often a word appears in a message
-- **IDF** — How rare the word is across all messages
-- Words like *"FREE"*, *"WIN"*, *"CLAIM"*, *"PRIZE"* are common in spam but rare in ham → high TF-IDF score → strong spam signal
+🚫 SPAM (confidence: ~99%)
+💡 Key Learnings
+TF-IDF highlights important spam keywords like free, win, claim
+Logistic Regression handles feature correlation better than Naive Bayes
+GridSearchCV improves model performance and avoids overfitting
+📄 License
 
----
+MIT License
 
-## 📈 Evaluation Plots
+👨‍💻 Author
 
-Model evaluation charts are saved to `models/evaluation.png`:
-- Confusion Matrix
-- Model Accuracy Comparison
-- ROC Curve (AUC score)
-
----
-
-## 💡 Key Learnings
-
-- TF-IDF with bigrams captures phrase-level spam signals (e.g., *"call now"*, *"free prize"*)
-- `sublinear_tf=True` reduces the weight of very frequent words, improving generalization
-- Logistic Regression outperforms Naive Bayes slightly on this dataset due to feature correlation handling
-- GridSearchCV prevents overfitting by selecting hyperparameters on held-out CV folds
-
----
-
-## 📄 License
-
-MIT License — free to use and modify.
-
----
-
-*Built as part of a machine learning portfolio project.*
-=======
-# email-spam-classifier
->>>>>>> 368c2f078dd59df32b385166bb2eaa71d7d114cc
+Mohit Masavarapu
+https://github.com/mohitmasavarapu19
