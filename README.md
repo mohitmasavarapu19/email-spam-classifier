@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📧 Email Spam Classification
 
 A machine learning project that classifies emails and SMS messages as **spam** or **ham (not spam)** using Natural Language Processing techniques.
@@ -150,3 +151,6 @@ MIT License — free to use and modify.
 ---
 
 *Built as part of a machine learning portfolio project.*
+=======
+# email-spam-classifier
+>>>>>>> 368c2f078dd59df32b385166bb2eaa71d7d114cc
