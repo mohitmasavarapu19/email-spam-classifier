@@ -5,6 +5,7 @@ A machine learning project that classifies emails and SMS messages as **spam** o
 **Achieved ~98% accuracy** using TF-IDF vectorization with Logistic Regression, tuned via GridSearchCV.
 
 ## 📊 Results
+
 ![Evaluation](models/evaluation.png)
 ---
 
