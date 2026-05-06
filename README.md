@@ -146,10 +146,4 @@ Model evaluation charts are saved to `models/evaluation.png`:
 
 ---
 
-## 📄 License
-
-MIT License — free to use and modify.
-
----
-
 *Built as part of a machine learning portfolio project.*
